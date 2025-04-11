@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Gallery</title>
+    <title>Resume Sample</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
             color: #333;
-            background-color: #f4f4f4;
+            background-color: #ca6ed6;
             margin: 0;
             padding: 0;
         }
 
         /* Header */
         header {
-            background-color: #402c50;
+            background-color: #4e2174;
             color: white;
             text-align: center;
             padding: 20px;
@@ -77,9 +76,13 @@
 
         /* Content Styling */
         .container {
-            width: 100%;
+            width: 90%;
             margin: auto;
             padding: 20px;
+            display: grid;
+            grid-template-columns: 45% 45%;
+            justify-content: space-between; /* Push columns apart */
+            gap: 1000%; 
         }
 
         img {
@@ -92,6 +95,17 @@
             padding-left: 20px;
         }
 
+        /* Box Style */
+        .box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;              
+            max-width: 500px;          
+            word-wrap: break-word;     
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -100,169 +114,191 @@
             padding: 10px;
             margin-top: 20px;
         }
-
-        /* Form Styling */
-        fieldset {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: auto;
-        }
-
-        legend {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        input, textarea, select {
+        .container {
             width: 90%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            margin: auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 60% 38%; /* Left column wider for Experience, right for Skills */
+            gap: 20px;
         }
 
-        button {
-            background-color: #6029b9;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
+        .spacer {
+    visibility: hidden;
+}
+
+/* Full-width sections like Certifications and Education */
+.box.full-width {
+    grid-column: 1 / -1;
+}
+
+.box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+        @media (max-width: 768px) {
+            .box {
+                flex: 0 100%;  
+            }
         }
 
-        /*Image-Box Styles*/
-        .image-box{
-            width: 100px;
-            height: 100px;
-            background-color: lightblue;
-            font-size: 20px;
-            font-weight: bold;
-            margin: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
-        .image-box img {
-            width: 100%;  
-            height: auto;             
-            border-radius: 4px;       
-        }
-        .image-container {
-            width: 80%;           
-            margin: 0 auto;          
-            display: flex;          
-            gap: 10px;              
-            justify-content: center;  
-            flex-wrap: wrap;          
-        }
-        
-        figcaption {
-            margin-top: 5px;
-            font-size: 14px;
-        }
+        .badge-container {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    max-width: 400px; /* Optional: Limit image width */
+    margin: 10px 0;
+}
+
+.badge-container img {
+    width: 20%;
+    border-radius: 10px;
+    display: block;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* For top-right corner */
+    /* Or change to: left: 10px; for top-left */
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
 
     </style>
-
 </head>
+<body style="background-image: url('images/luke-chesser-eICUFSeirc0-unsplash.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <header>
+        <h1>Gaceta, Leandro Rico C.</h1>
+        <img src="images/Evo-Photoroom.jpg" alt="Photo of A Witch" width="150">
+        <p><strong>Email:</strong> <a href="mailto:Leandroricogaceta@gmail.com">Leandroricogaceta@gmail.com</a></p>
+        <p><strong>Phone:</strong> 090807456</p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/mit.suha.3133">Leandroricogaceta@Facebook.com</a></p>
+        <p><strong>Address:</strong> Blk 18 Lt 20 Dela Costa Homes V, Rodriguez, Rizal</p>
 
-<body>
+        <div class="badge-container">
+            <img src="images/ccna-introduction-to-networks.png" alt="Certificate in CCNA" width="25%">
+        </div>
+
+        <div class="badge-container">
+            <img src="images/MOS_Excel.png" alt="Certificate in MOS Excel" width="25%">
+        </div>
+    </header>
 
     <nav>
         <ul>
-            <li><a href="#products">Featured Products</a></li>
-            <li><a href="#sales">Sales Gallery</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#Experiences">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#Certifications">Certifications</a></li>
+            <li><a href="#Educations">Education</a></li>
+            <li><a href="portfolio.html">Multimedia Portfolio</a></li>
+            <li><a href="#Video">Video</a></li>
+            <li><a href="#Audio">Audio</a></li>
+            <li><a href="gallery.html">gallery</a></li>
         </ul>
     </nav>
 
-    <main>
-        <!-- Featured Products Section -->
-        <section>
-            <h2 id="products">Featured Products</h2>
-            <figure>
-                <img src="images/PImages/CCTV3.png" alt="Featured Product 1" width="300">
-                <figcaption>Featured Product 1 - Best Seller</figcaption>
-            </figure>
-            <figure>
-                <img src="images/PImages/CCTV2.png" alt="Featured Product 2" width="300">
-                <figcaption>Featured Product 2 - New Arrival</figcaption>
-            </figure>
-            <figure>
-                <img src="images/PImages/CCTV4.png" alt="Featured Product 3" width="300">
-                <figcaption>Featured Product 3 - Limited Edition</figcaption>
-            </figure>
-        </section>
+    <br>
+    <br>
 
-        <!-- Sales Gallery Section -->
-        <div class="image-container"></div>
-        <section>
-            <h2 id="sales">Sales Gallery</h2>
-            <figure>
-                <img src="images/PImages/CCTV7.webp" alt="Sale Item 1" width="300">
-                <figcaption>Portable CCTV - 50% Off</figcaption>
-            </figure>
-            <figure>
-                <img src="images/PImages/CCTV6.webp" alt="Sale Item 2" width="300">
-                <figcaption>Square Type - Buy 1 Get 1</figcaption>
-            </figure>
-            <figure>
-                <img src="images/PImages/HDV2.png" alt="Sale Item 3" width="300">
-                <figcaption>DVR - Special Discount</figcaption>
-            </figure>
-        </section>
+    <div class="container">
+        <div class="box">
+            <h2 id="Experiences">Experience</h2>
+            <h3>Scribe</h3>
+            <p>Akasya Akademiya | 2020-2025</p>
+            <ul>
+                <li>Analyzing human and nature's behavior and their effects on the world</li>
+                <li>Answering unanswered questions</li>
+                <li>Wisdom in spiritual interpretation</li>
+            </ul>
 
-
-        <!-- Regular Gallery -->
-        <section>
-            <h2 id="gallery">Gallery</h2>
-            <figure>
-                <img src="images/PImages/Gallery1.webp" alt="Image 1" width="300">
-                <figcaption>CCTV Gallery</figcaption>
-            </figure>
-            <figure>
-                <img src="images/PImages/DVR1.jpg" alt="Image 2" width="300">
-                <figcaption>Storage Gallery</figcaption>
-            </figure>
-            <figure>
-                <img src="images/PImages/SDV1.png" alt="Image 3" width="300">
-                <figcaption>Miscellaneous</figcaption>
-            </figure>
-        </section>
-
-
-        <!-- Contact Form for Concerns -->
-        <div class="container">
-            <h2 id="contacts">Contact Me</h2>
-            <p>If you need guidance or project inquiry, feel free to message and add your contact details.</p>
-    
-            <fieldset>
-                <legend>Get in Touch</legend>
-                <p><label for="firstName">First Name: <input type="text" id="firstName" name="firstName" placeholder="First name" title="Type first name"></label></p>
-                <p><label for="email">Email: <input type="email" id="email" name="email" placeholder="Email" title="Type email" required></label></p>
-                <p><label for="telephone">Telephone: <input type="tel" id="tel" name="telephone" placeholder="Mobile no." title="Type your Mobile no." required></label></p>
-                <p>Your Message
-                    <textarea name="comments" cols="20" rows="4" placeholder="Enter your comments..."></textarea>
-                </p>
-                <p>Inquiry type:
-                    <select name="device">
-                        <option value="General inquiry">General inquiry</option>
-                        <option value="Project proposal">Project proposal</option>
-                        <option value="Collaboration">Collaboration</option>
-                    </select>
-                </p>
-                <button type="submit">Submit</button> <button type="reset">Clear form</button>
-            </fieldset>
+            <h3>Web Developer</h3>
+            <p>Our Lady of Fatima University | 2024-2025</p>
+            <ul>
+                <li>Uses OpenAI's ChatGPT to assist with tasks</li>
+                <li>Collaborates with classmates for learning</li>
+                <li>Manages assignments despite a demanding schedule</li>
+            </ul>
         </div>
-    </main>
+        <div class="spacer"></div>
+
+        <div class="spacer"></div>
+        <div class="box">
+            <h2 id="skills">Skills</h2>
+            <ul>
+                <li>Critical Thinking</li>
+                <li>Problem Solving</li>
+                <li>Analytics</li>
+                <li>Wisdom</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2 id="Certifications">Certifications</h2>
+            <p><strong>CodinGame by Coderpad Java Problem Solving Certification</strong></p>
+            <p>Certificate Claimed: Dec 18, 2024</p>
+            
+            <img src="images/Certificate Example.png" alt="CodinGame Certification" width="75%" style="border-radius: 10px; margin-top: 10px;">
+            
+            <p><strong>Certificate in CCNA:Introduction in Networking</strong></p>
+            <p>Certificate Claimed: April 11 2022</p>
+
+            <img src="images/Certificate.png" alt="Certificate in CCNA" width="75%" style="border-radius: 10px; margin-top: 10px;">
+        </div>
+        <div class="spacer"></div>
+
+        <div class="spacer"></div>
+        <div class="box">
+            <h2 id="Educations">Education</h2>
+            <ul>
+                <li><strong>Elementary:</strong> San Jose Elementary School</li>
+                <li><strong>Junior Highschool:</strong> San Jose National High School</li>
+                <li><strong>Senior Highschool:</strong> Sta. Cecilia Parochial School</li>
+                <li><strong>College:</strong> Akasya Akademiya (2026), Our Lady of Fatima University (2028)</li>
+            </ul>
+        </div>
+
+        <div class="box">
+            <h2 id="Video">Video</h2>
+            <h3>Introduction Video</h3>
+            <video controls width="400" height="300" poster="images/Nahida.jpg">
+                <source src="Video/Video.mp4" type="video/mp4">
+                Your browser does not support video playback.
+                <a href="/Video/Video.mp4">Download the video</a>.
+            </video>
+            <p>
+                <a href="https://www.youtube.com/hashtag/genshinimpact">#GenshinImpact</a> 
+                <a href="https://www.youtube.com/hashtag/hoyoverse">#HoYoverse</a>
+            </p>
+        </div>
+        <div class="spacer"></div>
+
+        <div class="spacer"></div>
+        <div class="box">
+            <h2 id="Audio">Audio</h2>
+            <h3>Audio Introduction</h3>
+            <audio controls>
+                <source src="Audio/Blazing Heart (English Version).mp3.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+                <a href="Audio/Blazing Heart (English Version).mp3.mp3">Download the audio</a>.
+            </audio>
+            <p>
+                <a href="https://www.youtube.com/hashtag/genshinimpact">#GenshinImpact</a> 
+                <a href="https://www.youtube.com/hashtag/hoyoverse">#HoYoverse</a>
+            </p>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Product Gallery</p>
+        <p><a href="#">Back to top</a></p>
     </footer>
 </body>
 </html>
