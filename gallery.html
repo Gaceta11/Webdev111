@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* General Styles */
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background-color: #d1b3e0;
+        margin: 0;
+        padding: 0;
+        filter: hue-rotate(15deg);
+    }
+        .no-underline {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+    html, body {
+    overflow-x: hidden;
+}
+
+    body {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+        .hue-effect {
+        filter: hue-rotate(20deg);
+    }  
+
+        /* Header */
+        header {
+        background-color: #401866;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        header p, header a {
+            font-size: 14px;
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        #products,
+        #sales,
+        #gallery {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+
+        /* Navigation */
+        nav ul {
+    list-style: none;
+    background-color: #9370DB;
+    text-align: center;
+    padding: 12px;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #1467b4;
+    font-size: 18px;
+    color: #ffffff;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.section-box {
+    background-color: #ffffff;
+    border: 2px solid #402c50;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 1100px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.section-box h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #402c50;
+    margin-bottom: 20px;
+}
+
+    /* Sections */
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #34495e;
+        }
+
+        /* Links */
+        a {
+            color: #4b10b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Styling */
+        .container {
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows images to move to the next row */
+            justify-content: center;
+            align-items: stretch; /* Ensures equal height */
+            gap: 15px;
+            margin-top: 20px;
+            background-color: #664579;
+            padding: 20px;
+            border: 2px solid black;
+}
+        /* Image-Box Styles */
+        .image-box {
+        width: 220px;
+        height: 260px;
+        background-color: white;
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        animation: fadeInUp 0.7s ease-in-out;
+    }
+
+        .image-box:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    }
+        @keyframes fadeIn {
+            from {
+            opacity: 0;
+            transform: translateY(20px);
+    }
+    to  {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+            .image-box img {
+            width: 100%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .caption {
+            font-size: 14px;
+            background-color: white;
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+     .image-box p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 95%;
+        background: white;
+        color: rgb(0, 0, 0);
+        font-size: 14px;
+        padding: 5px;
+        margin: 0;
+        border-radius: 0 0 4px 4px;
+        text-align: center;
+        font-weight: bold;
+    }
+        .image-container {
+            width: 90%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 50px;
+            padding: 10px;
+        }
+
+        figcaption {
+            margin-top: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Form Styling */
+        fieldset {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input, textarea, select {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            background-color: #6029b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4a1e99; 
+            transform: scale(1.1); 
+    }
+    .form-group textarea {
+    width: 100%;
+    padding: 20px 10px 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  #contacts {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin: 5px;
+  }
+
+  /*Modal */
+
+    .modal {
+    display: none;
+    position: fixed; /* <-- this keeps it centered even when scrolling */
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+    #modal-description {
+      white-space: pre-line;
+      font-size: 14px;
+      line-height: 1.5;
+  }
+  .modal-content {
+  position: fixed; /* This pins it to the screen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #402c50;
+  width: 380px;
+  max-width: 380px;
+  border-radius: 10px;
+  max-height: 480px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1001;
+}
+    body.fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .modal-content img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border: 2px solid #4f0458;
+    }
+
+    .close-btn {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      position: absolute;
+      top: 10px; right: 15px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: black;
+    }
+
+    </style>
+        </head>
+        <header>
+            <h1>Product Gallery</h1>
+        </header>
+            <nav>
+                <ul>
+                    <li><a href="#products">Featured Products</a></li>
+                    <li><a href="#sales">Sales Gallery</a></li>
+                    <li><a href="gallery.html" class="transition-link">gallery</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                    <li><a href="index.html">Resume</a></li>
+                </ul>
+            </nav>
+            
+        <div class="hue-effect">
+            <main>
+
+        <!-- Featured Products Section -->
+<section>
+    <div class="section-box">
+      <h2 id="products" class="no-underline" style="text-align: center;">CCTV Cameras</h2>
+      <div class="image-container">
+        <div class="image-box"data-type="cctv">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_04_33598/ProductImage/1_0_01_04_33598_347554230_crop_thumb.png" alt="Featured Product 1">
+          </div>
+          <p>IPC-HFW4831E-SE</p>
+        </div>
+        <div class="image-box">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_04_33984/ProductImage/1_0_01_04_33984_347553230_crop_thumb.png" alt="Featured Product 2">
+          </div>
+          <p>IPC-HDW2439T-AS-LED-S2</p>
+        </div>
+        <div class="image-box">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/image/20181029/DH-IPC-PDBW5831-B360-E4_image_20181025_thumb.png" alt="Featured Product 3">
+          </div>
+          <p>IPC-PDBW5831-B360</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sales Gallery Section -->
+  <section>
+    <div class="section-box">
+      <h2 id="sales" style="text-align: center;">Security Gallery</h2>
+      <div class="image-container">
+        <div class="image-box">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/image/20200608/IPC-HDBW1235E-W-S2_thumb.png" alt="Sale Item 1">
+          </div>
+          <p>Portable CCTV</p>
+        </div>
+        <div class="image-box">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/image/20200529/IPC-K22_thumb.png" alt="Sale Item 2">
+          </div>
+          <p>Advance Type CCTV</p>
+        </div>
+        <div class="image-box">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/image/20230606/5M-N1080P-Series.png" alt="Sale Item 3">
+          </div>
+          <p>Data Container</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Regular Gallery -->
+  <section>
+    <div class="section-box">
+      <h2 id="gallery" style="text-align: center;">Gallery</h2>
+      <div class="image-container">
+        <div class="image-box" data-type="cctv">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/image/20181029/DH-IPC-PDBW5831-B360-E4_image_20181025_thumb.png" alt="CCTV Gallery">
+          </div>
+          <p>CCTV Gallery</p>
+        </div>
+        <div class="image-box"data-type="storage">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/upfiles/EVS5036S-R_thumb.png" alt="Storage Gallery">
+          </div>
+          <p>Storage Gallery</p>
+        </div>
+        <div class="image-box"data-type="others">
+          <div class="gallery-container">
+            <img src="https://material.dahuasecurity.com/uploads/image/20220905/mon.png" alt="Miscellaneous">
+          </div>
+          <p>Others</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+        <!-- Contact Form for Concerns -->
+<div class="container">
+    <div class="section-box">
+      <h2 id="contacts">Contact Me</h2>
+      <p>If you need guidance or project inquiry, feel free to message and add your contact details.</p>
+
+      <form>
+        <p>
+          <label for="fullName">Full Name:</label><br>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" title="Type your full name" required>
+        </p>
+  
+        <p>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="Enter your email" title="Type your email" required>
+        </p>
+  
+        <p>
+          <label for="subject">Subject:</label><br>
+          <input type="text" id="subject" name="subject" placeholder="Enter subject" title="Type your subject" required>
+        </p>
+  
+        <p>
+          <label for="comments">Your Message:</label><br>
+          <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments..." required></textarea>
+        </p>
+  
+        <button type="submit">Submit</button>
+        <button type="reset">Clear Form</button>
+      </form>
+    </div>
+  </div>  
+        </main>
+        <footer>
+    <p>&copy; 2025 Product Gallery</p>
+</footer>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title">Product Title</h3>
+      <img id="modal-image" src="" alt="Product Image">
+      <p id="modal-description">Product description goes here...</p>
+    </div>
+  </div>
+
+  <!-- Gallery Modality -->
+<div id="gallery-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn-gallery">&times;</span>
+    <h3 id="gallery-modal-title">Gallery Details</h3>
+    <p id="gallery-modal-description" style="white-space: pre-line; font-size: 14px; line-height: 1.5;"></p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalImage = document.getElementById('modal-image');
+  const modalDesc = document.getElementById('modal-description');
+  const closeBtn = document.querySelector('.close-btn');
+
+  const productDetails = {
+  0: {
+    title: "IPC-HFW4831E-SE",
+    desc: `4MP Full-color Eyeball Camera\n• 4MP, 1/3" CMOS sensor\n• 4MP@30fps, H.265\n• Built-in warm lights (30m)\n• WDR, 3D NR, BLC\n• Intrusion & Tripwire detection\n• Motion/tamper alerts, SD card support (256GB), Mic\n• 12V DC / PoE, IP67 rated`,
+    img: "https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_04_33598/ProductImage/1_0_01_04_33598_347554230_crop_thumb.png"
+  },
+  1: {
+    title: "IPC-HDW2439T-AS-LED-S2",
+    desc: `4MP Full-color Bullet Camera\n• 4MP, 1/3" CMOS sensor\n• 4MP@30fps, H.265\n• Warm lights (40m), WDR, 3D NR\n• Intrusion & Tripwire detection\n• Audio I/O, Alarm I/O, SD card (256GB)\n• 12V DC / PoE (output: 165mA)\n• IP67 rated`,
+    img: "https://material.dahuasecurity.com/uploads/cpq/prm-os-srv-res/smart/formal/Product/HQ/1_0_01_04_33984/ProductImage/1_0_01_04_33984_347553230_crop_thumb.png"
+  },
+  2: {
+    title: "IPC-PDBW5831-B360",
+    desc: `4x2MP Panoramic Dome Camera\n• Four 2MP STARVIS CMOS\n• 2MP@30fps, H.265/H.264\n• Smart Detection, 140dB WDR\n• 2.7–12mm motorized lens\n• IR range: 30m, SD card, PoE+\n• IK10, IP67 rated`,
+    img: "https://material.dahuasecurity.com/uploads/image/20181029/DH-IPC-PDBW5831-B360-E4_image_20181025_thumb.png"
+  }
+};
+  document.querySelectorAll('.image-container .image-box').forEach((box, index) => {
+    box.addEventListener('click', () => {
+      const data = productDetails[index];
+      modalTitle.textContent = data.title;
+      modalImage.src = data.img;
+      modalDesc.textContent = data.desc;
+      modal.style.display = 'block';
+    });
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+
+  box.addEventListener('click', (e) => {
+  e.preventDefault();
+  const data = productDetails[index];
+  modalTitle.textContent = data.title;
+  modalImage.src = data.img;
+  modalDesc.textContent = data.desc;
+  modal.style.display = 'block';
+});
+</script>
+
+<script>
+  const galleryModal = document.getElementById('gallery-modal');
+  const galleryTitle = document.getElementById('gallery-modal-title');
+  const galleryDesc = document.getElementById('gallery-modal-description');
+  const closeGalleryBtn = document.querySelector('.close-btn-gallery');
+
+  const galleryDetails = {
+    cctv: {
+      title: "📷 CCTV Gallery",
+      desc: `Dome Cameras\nShape: Dome-shaped\n\nDay/Night Cameras\nFeatures: Designed to work in both well-lit and low-light conditions\n\nInfrared/Night Vision Cameras\nFeatures: Use IR LEDs for night surveillance\n\nWireless Cameras\nFeatures: No cables for video transmission (though often still need power)\n\nHD Cameras\nResolution: High-definition (720p, 1080p, 4K)\n\nThermal Cameras\nFeatures: Detect heat instead of light`
+    },
+    storage: {
+      title: "💾 Storage Gallery",
+      desc: `DVR (Digital Video Recorder)\nFor: Analog cameras\nStorage: Internal hard drives\nNote: Cost-effective, basic local storage\n\nNVR (Network Video Recorder)\nFor: IP cameras\nStorage: Internal hard drives or external NAS\nNote: High-quality recording, network-based\n\nNAS (Network-Attached Storage)\nFor: IP systems\nStorage: Central network storage device`
+    },
+    others: {
+      title: "🛠️ Others",
+      desc: `🔌 1. Monitor/TV\nPurpose: To view live and recorded footage\nType: LED TV or CCTV monitor (HDMI/VGA compatible)\n\n🔋 3. Power Supply\nPurpose: To power the cameras and recorders\nType: Individual adapters or centralized power box\n\n🔌 4. Cables & Connectors\nFor Analog Systems: Coaxial cable (RG59) + BNC connectors\nFor IP Systems: Ethernet cable (Cat5e/Cat6)`
+    }
+  };
+
+  document.querySelectorAll('#gallery ~ .image-container .image-box').forEach((box) => {
+    box.addEventListener('click', () => {
+      const type = box.getAttribute('data-type');
+      const data = galleryDetails[type];
+      if (data) {
+        galleryTitle.textContent = data.title;
+        galleryDesc.textContent = data.desc;
+        galleryModal.style.display = 'block';
+      }
+    });
+  });
+
+  closeGalleryBtn.onclick = () => {
+    galleryModal.style.display = 'none';
+  };
+
+  window.addEventListener('click', (e) => {
+    if (e.target === galleryModal) {
+      galleryModal.style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.transition-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+          e.preventDefault(); // Stop normal link behavior
+          const href = this.getAttribute('href');
+
+          document.body.classList.add('fade-out');
+
+          setTimeout(() => {
+              window.location.href = href;
+          }, 500); // Match with CSS transition time
+      });
+  });
+</script>
+</body>
+</html>
